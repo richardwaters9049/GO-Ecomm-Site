@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"github.com/anthdm/weavebox"
+)
 
 func main(){
-	fmt.Println("Hello World"); 
+	app := weavebox.New()
+
+	app.Get("/product", func(ctx *weavebox.Context) error {return nil})
+
+	app.Serve(3001)
 }
